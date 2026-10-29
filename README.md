@@ -4,6 +4,10 @@ A free audio ducking VST3 plugin for **Windows x64**, created by David Blackstor
 
 ![Open Duck native editor preview](Open-Duck-editor.png)
 
+
+**[Download Windows installer 0.4.1 R17](https://github.com/davidblackstorm-ai/Open-Duck/releases/download/v0.4.1-r17/Black-Circuit-Open-Duck-0.4.1-R17-Setup.exe)** | **[Complete release and source downloads](https://github.com/davidblackstorm-ai/Open-Duck/releases/tag/v0.4.1-r17)**
+
+**[Leave feedback / volunteer for testing](https://github.com/davidblackstorm-ai/Open-Duck/issues/2)** | **[Help create the Mac version](https://github.com/davidblackstorm-ai/Open-Duck/issues/1)**
 ## Download and source code
 
 Open this repository's [**Releases**](https://github.com/davidblackstorm-ai/Open-Duck/releases) section for the Windows installer, tester package and full developer source archive. The full source tree is also available directly in this repository: Source, Assets, tests, tools, installer, docs and third_party/JUCE. The developer archive provides the same development snapshot in a convenient download. The snapshot has not been freshly compiled for publication.
@@ -45,6 +49,7 @@ The wider QA/release scripts need additional dependencies documented in the arch
 ## License and credits
 
 The project contains an AGPL v3 license in LICENSE.txt. Preserve dependency notices and existing credits. JUCE and other dependencies retain their own license terms. David Blackstorm confirmed authorship of the graphics and authorized project publication. Contributions must include the rights needed to share and modify them under compatible terms.
+
 
 
 
