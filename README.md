@@ -6,9 +6,9 @@ A free audio ducking VST3 plugin for **Windows x64**, created by David Blackstor
 
 ## Download and source code
 
-Open this repository's **Releases** section for the Windows installer, tester package and full developer source archive. The full source tree is also available directly in this repository: Source, Assets, tests, tools, installer, docs and third_party/JUCE. The developer archive provides the same development snapshot in a convenient download. The snapshot has not been freshly compiled for publication.
+Open this repository's [**Releases**](https://github.com/davidblackstorm-ai/Open-Duck/releases) section for the Windows installer, tester package and full developer source archive. The full source tree is also available directly in this repository: Source, Assets, tests, tools, installer, docs and third_party/JUCE. The developer archive provides the same development snapshot in a convenient download. The snapshot has not been freshly compiled for publication.
 
-**No macOS build is available yet.** Help porting, building and testing on macOS is welcome, including Apple Silicon and Intel where feasible. Linux compatibility is not verified.
+**No macOS build is available yet.** The complete source code and resources are provided so volunteers can modify the project, create a native Mac version and submit their changes and builds for review. Help porting, building and testing on macOS is welcome, including Apple Silicon and Intel where feasible. Open an Issue using the volunteer/macOS template to get involved. Linux compatibility is not verified.
 
 ## Help shape the next version
 
@@ -21,7 +21,7 @@ Priorities include:
 - Improved interface, usability, accessibility and original graphics.
 - A native macOS port and testing in Mac audio hosts.
 
-Use **Issues** to report bugs, suggest features or volunteer. Read CONTRIBUTING.md and TESTING.md first. Reviewed improvements can be released here with contributor credits. Positive ratings are not required; constructive criticism is welcome.
+Use [**Issues**](https://github.com/davidblackstorm-ai/Open-Duck/issues) to report bugs, suggest features or volunteer. Read CONTRIBUTING.md and TESTING.md first. Reviewed improvements can be released here with contributor credits. Positive ratings are not required; constructive criticism is welcome.
 
 ## Current features
 
@@ -45,5 +45,6 @@ The wider QA/release scripts need additional dependencies documented in the arch
 ## License and credits
 
 The project contains an AGPL v3 license in LICENSE.txt. Preserve dependency notices and existing credits. JUCE and other dependencies retain their own license terms. David Blackstorm confirmed authorship of the graphics and authorized project publication. Contributions must include the rights needed to share and modify them under compatible terms.
+
 
 
