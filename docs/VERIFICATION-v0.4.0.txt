@@ -1,0 +1,109 @@
+﻿BLACK CIRCUIT — OPENDUCK PRO X 0.4.0
+Report locale di consegna — 29 ottobre 2026
+
+SOFTWARE E INSTALLER VERIFICATI. PULIZIA INTERMEDI BLOCCATA.
+
+Installer: E:\Codex\Lavori\OpenDuck Pro X\releases\OpenDuck-Pro-X-0.4.0-Windows-x64-Setup.exe
+Dimensione: 10,912,226 byte
+SHA256 installer: 94ab23bd6a72d774ce6fd06138c4ebee3ba35467dbee74ee5ae42e33715bc13f
+SHA256 VST3 finale: cb55bf345ecec8ecc5adebdd3c4078ae20e8b01bce28d0c1ffdc699237c661fc
+Progetto e sorgenti: E:\Codex\Lavori\OpenDuck Pro X
+Set di collaudo: E:\Codex\Lavori\OpenDuck Pro X\OpenDuck Pro X - TEST LAB Project\OpenDuck Pro X - TEST LAB - 0.4.0.als
+
+IMPLEMENTAZIONE
+Template cromato conservato; editor JUCE nativo e controlli interattivi.
+MIX e la posizione orizzontale lineare (-50..+50% del ciclo, neutro50%).
+PHASE e la durata attorno al centro (0.5..1.5 volte la durata del preset).
+CURVE cambia la curvatura. Nessun dry/wet o autogain nascosto sul nuovo MIX.
+La traslazione e tagliata ai bordi senza wrap. Arco LED, lineetta e numero
+condividono la stessa sorgente parametrica. Corretti residui luminosi del
+riferimento statico, stati esclusivi, pannelli opachi e nome preset modificato.
+Corretto separatamente l'estremo numerico della shape Arch prima delle potenze
+frazionarie, con regressione dedicata. I sorgenti DSP/AI e lo stato non sono
+stati alterati dalle sole correzioni grafiche successive, salvo questa
+correzione numerica esplicitamente registrata.
+
+700 preset: verificati 700 inviluppi DSP distinti, con catalogo e hash.
+Nuova istanza INIT Soft Duck; ripristino delle sessioni separato da INIT.
+Schema4 e parametri aggiunti in coda. I vecchi stati schema1-3 conservano
+interpretazione MIX, audio ed editor precedenti. Conservare il set originale
+se si vuole tornare a una versione precedente del plugin.
+
+Sidechain esterna VST3: in Ableton, Sidechain > Audio From > traccia kick >
+punto di prelievo. Main: basso o materiale da attenuare. Clic destro sul grafico
+per soglia, isteresi, protezione retrigger e smoothing.
+La waveform e assente senza audio acquisito; i dati visualizzati provengono
+dalla sidechain reale, con isolamento di un kick e aggiornamento successivo.
+Windows Media Player e rimasto escluso dalle sorgenti e non e stato fermato.
+
+AI locale: catture5/10 secondi, analisi e render sul worker, nessuna applicazione
+automatica. APPLY esplicito su miglioramento misurato; UNDO verificato anche
+dopo un successivo edit manuale. Astensione quando mancano copertura o benefici.
+
+VERIFICHE AUTOMATICHE FINALI
+Core, geometria, stato, preset, preview/DSP: 20 pass, 0 fail.
+UI, pulsanti, attachment e pixel LED: 4 pass, 0 fail.
+VST3 effettivo, lifecycle, legacy e automazione nuovi parametri: 85 pass, 0 fail.
+Host contract VST3: 11 pass, 0 fail.
+Cattura waveform reale: 108 pass, 0 fail.
+AI5s e AI10s: 5+5 pass, 0 fail.
+Stress: quattro istanze, 120s audio ciascuna con automazione; 2 pass, 0 fail.
+Validator Steinberg: 47 pass, 0 fail.
+Pluginval strictness10: SUCCESS, uscita0.
+Totale controlli riportati dalle suite: 287, nessun fallimento finale.
+Le prove fallite durante lo sviluppo restano nei log diagnostici e non sono
+promosse a verifiche superate.
+
+Misura DC dopo l'avvio, con smoothing: scarto massimo preview/DSP0.0041233;
+salto massimo tra campioni0.00412361. Queste sono misure sui segnali di prova,
+non una garanzia percettiva su qualunque sorgente.
+Automazione wrapper:512 blocchi, valori MIX riflessi correttamente e differenza
+RMS audio0.0519813 rispetto a una seconda istanza indipendente.
+Render nativi a864/1296/1728/2592 pixel. Verificati10001 valori angolari e53579
+pixel ciano di anello nelle prove. Il DPI di sistema non e stato modificato;
+non viene dichiarato un collaudo fisico su altri monitor o computer.
+
+COLLAUDO ABLETON LIVE12
+Unico progetto QA0.4.0, riaperto dopo la rifinitura per verificare il richiamo.
+Cinque istanze salvate indipendenti; nell'istanza modificata sono tornati
+MIX59%, PHASE-17%, CURVE-4% e la shape scelta, senza INIT indesiderato.
+168BPM /44.1kHz, latenza dichiarata11274 campioni (255.6ms).
+A48kHz:12112 campioni (252.3ms); il prodotto e orientato al mix.
+La latenza esposta e stata osservata e il ritardo DSP misurato: non viene
+attribuito un null test di export DAW che non e stato eseguito.
+Waveform vuota a startup; kick reale Track14/PostFX visibile dopo il Play.
+Drag reali, indipendenza dei tre controlli, selezione shape, editing custom,
+mini impostazioni, salvataggio e richiamo verificati.
+Proposta AI reale su5 secondi: obiettivo1.01314 ->0.40973; APPLY esplicito,
+UNDO e conservazione dell'edit manuale MIX verificati.
+Nessuna modifica diretta a driver, buffer, volume o preferenze globali audio.
+Il set originale0.3.1 e rimasto invariato (hash confrontato).
+La DLL caricata nell'ultimo collaudo ha lo stesso SHA256 della build finale.
+
+INSTALLER
+Black Circuit compare nel publisher, nel testo del wizard e nella grafica.
+Arte grafica ottenuta dal render nativo finale, non da un mockup.
+QA isolata: installazione autentica0.3.0, upgrade0.4.0, reinstallazione e
+rimozione superati; payload identico alla build e preset personali conservati.
+Il setup di produzione e compilato; non e stato eseguito in modalita elevata.
+Per il collaudo e stata copiata e verificata la DLL nella posizione standard.
+Firma Authenticode non presente. Nessuna pubblicazione o invio esterno.
+
+PACCHETTI
+OpenDuck-Pro-X-0.4.0-Sorgenti.zip: sorgenti, test, tool, documentazione, asset
+ed effettivi sorgenti JUCE/VST3 SDK; esclusi build, log privati e cache.
+OpenDuck-Pro-X-0.4.0-VST3.zip: payload VST3 della build verificata.
+SHA256SUMS-v0.4.0.txt contiene gli hash dei pacchetti.
+Per ricompilare: tools/build_v040.ps1 [-CMakePath percorso] [-WithStress].
+Per rigenerare gli asset: tools/create_installer_assets_v040.py dopo il build.
+Per compilare il setup: tools/compile_installer_v040.ps1 -InnoCompiler ISCC.exe.
+Per ripetere la QA di upgrade serve anche l'installer autentico0.3.0 archiviato;
+non vengono distribuite copie dell'ambiente privato dentro il pacchetto sorgenti.
+
+PULIZIA NON COMPLETATA
+Il controllo automatico ha respinto la rimozione ricorsiva, la rimozione dei
+soli oggetti verificati e anche un singolo percorso .obj letterale:
+"blocked by policy". Non sono stati aggirati i controlli o cancellati file.
+Restano 54 file .obj individuati, circa 99.8MiB,
+oltre agli archivi di recupero conservati. Questa attivita resta rossa nel
+pannello e non e dichiarata terminata. Sorgenti, setup finale e recovery intatti.

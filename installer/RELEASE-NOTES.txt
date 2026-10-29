@@ -1,0 +1,76 @@
+OpenDuck Black Circuit — 0.4.1
+Nome mostrato alla DAW: Open Duck
+
+Installer R17: verifica dei file in uso prima di modificare l'installazione.
+Se una DAW tiene caricato il plugin, salva il progetto, chiudi completamente
+la DAW e riprova. Il setup non chiude o riavvia applicazioni automaticamente.
+La DLL audio resta quella della revisione correttiva R16.
+
+Revisione correttiva R16:
+ANTI-CLICK protegge anche SYNC: raccordo causale dei salti in 2 ms,
+senza latenza aggiunta al percorso SYNC. Con la protezione accesa,
+il coefficiente del nuovo motore resta 0..1: nessun hard clipper audio.
+Corretto il detector con MAIN mono e sidechain stereo: ora legge anche
+il canale destro del kick. Nessuna sorgente MAIN usata come fallback.
+MIX, PHASE e CURVE: drag verticale relativo controllato, Shift fine 10x,
+nessuna accelerazione diagonale. Aspetto e geometria LED conservati.
+Stato POWER/sidechain nel grafico; livello SC e trigger nella mini scheda.
+Verifiche R16 su sorgenti e VST3 in host di test. Ableton non viene
+aperto o controllato; la prova nella DAW e l'installazione sono manuali.
+
+Editor JUCE nativo, template cromato e manopole approvate.
+Curva blu continua; guida SLOPE singola al passaggio del mouse, con drag
+che sposta i controlli interni della pendenza e mantiene fissi gli esterni.
+SHIFT: passi 1/16 e 1/256. UNDO nel grafico e Ctrl+Z per gesto.
+Memorie per forma e istanza: SHIFT, SLOPE, specchiatura e fine ONE SHOT.
+BAND: cutoff 20..5120 Hz, ricostruzione complementare e ascolto della banda
+bassa processata. BAND non aggiunge ritardo nel nuovo motore.
+Nessuna analisi locale/AI o modifica dei punti nella nuova interfaccia.
+
+Nuova istanza: MIX 0,0%, POWER spento, main non attenuato.
+MIX e la profondita reale; MOVE/SHIFT sposta la curva orizzontalmente.
+PHASE regola la durata; CURVE modifica la curvatura.
+MAIN reale visibile senza sidechain e con POWER spento; cattura di quattro
+beat. AUTO / 1 CURVA / LOOP riguarda soltanto la vista del grafico.
+VISTA offre MAIN/SIDECHAIN/OUTPUT, 1/2/4/8/16 beat, zoom e maschera del colpo.
+Nessuna waveform sintetica all'avvio o dilatazione dei campioni reali.
+In AUDIO/MIDI la linea blu GAIN REALE usa i coefficienti applicati dal
+motore, allineati alla waveform e alla latenza: conserva retrigger fuori
+griglia e mantenimento END. Non ripete curve senza eventi reali.
+1 CURVA mostra l'ultimo trigger catturato con asse relativo al trigger;
+LOOP mostra la cattura live, anche parziale. AUTO classifica solo finestre
+reali complete. SYNC conserva l'anteprima periodica del profilo selezionato.
+
+Mini scheda: soglia, isteresi, retrigger, ONE SHOT/LOOP audio, fine curva,
+Anti-click e latenza effettivamente comunicata alla DAW.
+ONE SHOT mantiene il guadagno finale dopo un evento reale; prima del primo
+evento non attenua. Il LOOP audio e distinto dalla vista LOOP.
+Le sessioni richiamano parametri, memorie e POWER salvati.
+
+Nuovo motore model1, latenze in campioni:
+44.1 kHz: SYNC 0; MIDI 0 / 265; AUDIO 441 / 706.
+48 kHz:   SYNC 0; MIDI 0 / 289; AUDIO 480 / 769.
+96 kHz:   SYNC 0; MIDI 0 / 577; AUDIO 960 / 1537.
+Le coppie indicano Anti-click OFF/ON. A 48 kHz: MIDI 6,020833 ms e AUDIO 16,020833 ms
+con Anti-click ON. SYNC rimane zero anche con BAND acceso.
+Il raccordo cubico anticipato OpenDuck e indipendente; non si afferma
+l'equivalenza completa all'anti-click del riferimento. Gli aggiornamenti
+PDC vengono pubblicati fuori dal callback audio e completati dall'host.
+Il cambio Anti-click nella stessa modalita mantiene nota/fase e raccorda
+in 2 ms le uscite dei due ritardi, con code sempre calde e tap diretto
+al termine. Il cambio del modo trigger segue le normali notifiche host.
+Gli stati model0 mantengono il routing storico (12112 campioni a 48 kHz).
+
+700 preset integrati. Nome tecnico del bundle, identificatori e percorsi
+storici OpenDuck Pro X conservati per il richiamo delle sessioni.
+Preset personali conservati; preferenze globali Ableton non modificate.
+Il collaudo usa solo le sorgenti instradate nel progetto Ableton.
+Chiudere la DAW prima di aggiornare il bundle.
+
+Riferimento funzionale: manuale ufficiale Kickstart 2
+https://downloads.cableguys.com/Nicky-Romero-Kickstart-2-Manual.pdf?v=2.0.8
+Implementazione DSP indipendente; nessun codice proprietario Cableguys.
+La corrispondenza delle prove registrate non implica identita completa.
+
+Il report di consegna deve contenere le verifiche correnti e gli hash della
+stessa build inclusa nel setup. I report 0.4.0 restano prove storiche.

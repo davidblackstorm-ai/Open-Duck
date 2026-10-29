@@ -1,0 +1,14 @@
+BLACK CIRCUIT - OpenDuck PRO X - local release 0.4.1
+
+Original application source is provided under GNU AGPL version 3 or later.
+The corresponding source accompanies this local project. JUCE and the VST3 SDK retain their respective licenses and copyright notices. No commercial JUCE license is claimed or purchased.
+
+Provided AS IS, without warranty. Consult RELEASE-NOTES.txt and the verification report before relying on this local release in a production session.
+
+The user-supplied design reference is incorporated for this commissioned local prototype. This notice does not assert ownership or redistribution rights over third-party artwork.
+
+Installer music is an original synthesized composition produced specifically for this project, without third-party recordings. It plays only in the installer and can be disabled using AUDIO ON/OFF. No global or device volume setting is changed.
+
+User presets are preserved during updates. Silent uninstall preserves presets. Interactive uninstall asks separately before removing the current user's presets, with preservation as the default. DAW projects are not removed.
+
+Selecting acceptance permits installation of these files. No telemetry is included in the original application code.

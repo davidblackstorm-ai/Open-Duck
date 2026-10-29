@@ -1,0 +1,18 @@
+DEVELOPER HANDOFF — LOCAL REVIEW COPY
+
+This is a snapshot of the current Open Duck 0.4.1 sources, not a newly tested release. R17 is the Windows installer revision; its DSP payload is R16. No macOS build is provided.
+
+Included: CMakeLists.txt, Source, Assets, cmake, tests and fixtures, tools, installer sources/resources, top-level project docs and JUCE sources without Git metadata. No user projects, credentials, browser sessions, local Python environments or previous builds are included. Original notices remain in place.
+
+Windows prerequisites: Visual Studio 2022 Desktop C++, Windows SDK and CMake >=3.22. JUCE is bundled. To build only the plugin from this folder:
+cmake -S . -B build -G "Visual Studio 17 2022" -A x64
+cmake --build build --config Release --target OpenDuckProX_VST3
+These commands are guidance and were not executed for this handoff. They create files only when a developer runs them.
+
+The broader validation/release scripts have additional QA dependencies (Steinberg validator SDK, pluginval, Inno Setup, Python/NumPy/Pillow). They may retain project-specific paths. See docs/DEPENDENCIES.md and tools/build_v041.ps1. The separate Steinberg validator SDK and external QA executables are not bundled. Plugin compilation uses JUCE's integrated VST3 headers.
+
+macOS work requested: audit Windows-only includes, CMake targets, linker flags and installer-specific components; prepare a Mac build using JUCE/CMake/Xcode; test VST3 in supported hosts, Apple Silicon and Intel as feasible; decide separately whether to add AU. Windows .exe cannot run as a native Mac installer. Code signing/notarization and platform compatibility remain future work, not claimed results.
+
+Contributions welcome: reproducible bug reports, code review, DSP/latency/automation tests, refactoring, performance, UI/UX, original graphics, accessibility, preset/workflow improvements, documentation and Mac porting. Contributions are voluntary and unpaid; preserve license notices and contributor attribution. Submit small reviewable changes and describe testing before integration.
+
+AUTHOR CONFIRMATION: On 29 October 2026 the project author confirmed in chat that he created the graphics, owns the project and authorizes sharing for testing and collaboration. This supersedes the earlier local publication hold for artwork. Preserve all third-party dependency notices and LICENSE.txt (AGPL v3). See CONFERMA_AUTORE_IT.txt. This source snapshot has not been freshly built or validated.

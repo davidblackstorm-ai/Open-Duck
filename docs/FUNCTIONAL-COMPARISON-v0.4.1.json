@@ -1,0 +1,942 @@
+{
+  "schema": "black-circuit-openduck-functional-comparison-v041-1",
+  "dateUTC": "2026-10-29T12:39:41.855843+00:00",
+  "purpose": "Numerical functional comparison of selected measured behaviours. Not a claim of complete product equivalence or completed release validation.",
+  "reference": {
+    "product": "Kickstart 2",
+    "installedMeasuredVersion": "2.0.1",
+    "moduleSha256": "c582083ae648e7c0a5210d7336dc4f8dc90c32335db8e240ccf474e1e385fa31",
+    "currentInstalledModuleHashVerified": true,
+    "publicManual": {
+      "url": "https://downloads.cableguys.com/Nicky-Romero-Kickstart-2-Manual.pdf?v=2.0.8",
+      "retrievedHeaderVersion": "2.0.9",
+      "role": "Control descriptions only; numerical results come from measured installed2.0.1."
+    }
+  },
+  "method": {
+    "host": "Independent explicitly selected VST3 host. No audio device, DAW settings changes or executable implementation inspection.",
+    "inputFloat32": 0.15000000596046448,
+    "gainConversion": "Reference output CSV parsed as decimal and divided by the exact float32 input0.15000000596046448. PCM regression fixtures round output to IEEE754 float32 little endian.",
+    "units": {
+      "gainError": "Absolute linear amplitude gain",
+      "outputError": "Absolute audio sample amplitude at the stated input level"
+    },
+    "sourceProtection": "No reference DLL, private XML, raw project XML, personal paths or track names are included in this report. Only aggregate numeric settings and evidence hashes.",
+    "pipelineStatus": "The numerical comparisons below are documented measurements, not a final release receipt. Current compiled-module, native-host, validator and installer gates are tracked separately in releaseValidation."
+  },
+  "releaseValidation": {
+    "status": "A fresh complete release suite and final native-host, validator and installer receipts remain separate gates. This report does not assert that those gates have completed.",
+    "numericalReportCertifiesFullParity": false,
+    "targetedLegacyWaveformRegression": {
+      "scope": "Six legacy telemetry clocks at145/168BPM across three trigger modes, with profileModel4 explicitly0. The new measured model's independent MAIN overview is covered separately by Revision041 tests.",
+      "passed": 108,
+      "failed": 0,
+      "exitCode": 0,
+      "evidence": {
+        "file": "work/revision041/waveform-capture-legacy-R12-fix.log",
+        "sha256": "a86486d010bd764c129e7de7a06c92e76a6d8a688b4d09d05b71e8009eb00532",
+        "bytes": 10757
+      }
+    },
+    "authoritativeFinalReceipts": [
+      "build/verification-v0.4.1/results.json",
+      "work/revision041/ableton-verification.json",
+      "work/revision041/validator-verification.json",
+      "build/installer-production-v0.4.1.json",
+      "build/installer-qa-results-v0.4.1.json"
+    ],
+    "receiptRequirement": "Use fresh successful receipts whose input and binary hashes match the delivered files. The presence of an older receipt alone does not satisfy a release gate."
+  },
+  "staticProfiles": {
+    "count": 16,
+    "measurement": {
+      "sampleRate": 48000,
+      "bpm": 120,
+      "samplesPerWave": 24000,
+      "mixPercent": 100,
+      "curve": 0,
+      "band": false,
+      "move": 0,
+      "slope": 0
+    },
+    "construction": "Independent8192float-node table and periodic Catmull-Rom polynomial. Signed overshoot retained.",
+    "maxGainErrorFloat32NodesDoubleArithmetic": 1.9014334939893018e-07,
+    "worstWaveRmsGainError": 3.651204137336281e-08,
+    "perWave": [
+      {
+        "wave": 1,
+        "float32TableGainMaxAbs": 1.7279997932551083e-07,
+        "float32TableGainRMS": 2.3384691234048933e-08,
+        "linear8192GainMaxAbs": 0.000793536232037706
+      },
+      {
+        "wave": 2,
+        "float32TableGainMaxAbs": 1.6718899920054042e-07,
+        "float32TableGainRMS": 2.4513283231112582e-08,
+        "linear8192GainMaxAbs": 0.00163724019851208
+      },
+      {
+        "wave": 3,
+        "float32TableGainMaxAbs": 1.7799969420639883e-07,
+        "float32TableGainRMS": 2.099789830377385e-08,
+        "linear8192GainMaxAbs": 0.0006543638612064306
+      },
+      {
+        "wave": 4,
+        "float32TableGainMaxAbs": 1.7789252293454183e-07,
+        "float32TableGainRMS": 2.6266472327989722e-08,
+        "linear8192GainMaxAbs": 0.0006543638612064306
+      },
+      {
+        "wave": 5,
+        "float32TableGainMaxAbs": 1.740881082623602e-07,
+        "float32TableGainRMS": 3.0211291386310255e-08,
+        "linear8192GainMaxAbs": 0.0008139531273918532
+      },
+      {
+        "wave": 6,
+        "float32TableGainMaxAbs": 1.8179672933715807e-07,
+        "float32TableGainRMS": 2.0448699440965796e-08,
+        "linear8192GainMaxAbs": 0.0010765313845381153
+      },
+      {
+        "wave": 7,
+        "float32TableGainMaxAbs": 1.7440179389538457e-07,
+        "float32TableGainRMS": 2.5335848662276434e-08,
+        "linear8192GainMaxAbs": 0.0017939008589535899
+      },
+      {
+        "wave": 8,
+        "float32TableGainMaxAbs": 1.7148574915637482e-07,
+        "float32TableGainRMS": 2.1787538847138523e-08,
+        "linear8192GainMaxAbs": 0.0017939008589535899
+      },
+      {
+        "wave": 9,
+        "float32TableGainMaxAbs": 1.5465892400090553e-07,
+        "float32TableGainRMS": 1.4031396929867124e-08,
+        "linear8192GainMaxAbs": 0.0005142889098006531
+      },
+      {
+        "wave": 10,
+        "float32TableGainMaxAbs": 1.82668988601975e-07,
+        "float32TableGainRMS": 1.7734927669029893e-08,
+        "linear8192GainMaxAbs": 0.00030103952549331847
+      },
+      {
+        "wave": 11,
+        "float32TableGainMaxAbs": 1.597841751133089e-07,
+        "float32TableGainRMS": 1.1714990953674186e-08,
+        "linear8192GainMaxAbs": 0.07404227732139446
+      },
+      {
+        "wave": 12,
+        "float32TableGainMaxAbs": 1.7231972126996453e-07,
+        "float32TableGainRMS": 1.9689752461051227e-08,
+        "linear8192GainMaxAbs": 0.07404227732139446
+      },
+      {
+        "wave": 13,
+        "float32TableGainMaxAbs": 1.7346155034569932e-07,
+        "float32TableGainRMS": 3.651204137336281e-08,
+        "linear8192GainMaxAbs": 0.00016158819524572868
+      },
+      {
+        "wave": 14,
+        "float32TableGainMaxAbs": 1.9014334939893018e-07,
+        "float32TableGainRMS": 2.4537798322284393e-08,
+        "linear8192GainMaxAbs": 0.00015687942609950503
+      },
+      {
+        "wave": 15,
+        "float32TableGainMaxAbs": 1.699002606381228e-07,
+        "float32TableGainRMS": 1.810217240513667e-08,
+        "linear8192GainMaxAbs": 0.00011985691351312777
+      },
+      {
+        "wave": 16,
+        "float32TableGainMaxAbs": 1.6583019391003262e-07,
+        "float32TableGainRMS": 2.4262663899908376e-08,
+        "linear8192GainMaxAbs": 0.00014425310702467775
+      }
+    ],
+    "referenceSources": [
+      {
+        "wave": 1,
+        "file": "work/revision041/Reference/Wave-01/reference-output.csv",
+        "sha256": "ca1ef92e9f831f66642bb122e4d088d132c31d543336278b763123dc724c9466",
+        "bytes": 1249296
+      },
+      {
+        "wave": 2,
+        "file": "work/revision041/Reference/Wave-02/reference-output.csv",
+        "sha256": "d7df03720a5cf71d87b7fd12170076e162d5c290bce4aeeb1bd860ae8dda34a0",
+        "bytes": 1247831
+      },
+      {
+        "wave": 3,
+        "file": "work/revision041/Reference/Wave-03/reference-output.csv",
+        "sha256": "f430784a614b32ce1e1f469a7fb4e81118dd2f5b3d4961fdf0b6931e7ca482fe",
+        "bytes": 1232694
+      },
+      {
+        "wave": 4,
+        "file": "work/revision041/Reference/Wave-04/reference-output.csv",
+        "sha256": "1275c603142a6435146aefc751642d91a2a4d42c40e4257da5ef7163e9478d94",
+        "bytes": 1260427
+      },
+      {
+        "wave": 5,
+        "file": "work/revision041/Reference/Wave-05/reference-output.csv",
+        "sha256": "46ec99807822d6a44650306167af78899cc0db19bf9f8a12b10fab948c57cf10",
+        "bytes": 1260252
+      },
+      {
+        "wave": 6,
+        "file": "work/revision041/Reference/Wave-06/reference-output.csv",
+        "sha256": "0b0bd1ead2a58498492bec4b5f1cdd41d9adea88bb7e6c7a9a3670f449b6d2fa",
+        "bytes": 1220326
+      },
+      {
+        "wave": 7,
+        "file": "work/revision041/Reference/Wave-07/reference-output.csv",
+        "sha256": "6a5db17d365c2326566a4706cb16b68ab5862dc789e7520725ea8cbe1f93a739",
+        "bytes": 1247821
+      },
+      {
+        "wave": 8,
+        "file": "work/revision041/Reference/Wave-08/reference-output.csv",
+        "sha256": "3a64b69c4a6f6ccb586c7df02a3e80a88a5939bf6caa8024f60031c2b4c1e3d3",
+        "bytes": 1240578
+      },
+      {
+        "wave": 9,
+        "file": "work/revision041/Reference/Wave-09/reference-output.csv",
+        "sha256": "3ddbeee63316b4dabca2cb82a89b7d12cdeb9f0434763cb22671f139204e9c2e",
+        "bytes": 1240084
+      },
+      {
+        "wave": 10,
+        "file": "work/revision041/Reference/Wave-10/reference-output.csv",
+        "sha256": "e6b2c884ca742706c14f18cdcdb264f28998aa3fe01c572ec78f69fba6541342",
+        "bytes": 1148569
+      },
+      {
+        "wave": 11,
+        "file": "work/revision041/Reference/Wave-11/reference-output.csv",
+        "sha256": "a1ab9498e896a1c23dd9f2c7b418a06cca942547f08eff75284639d3a505920a",
+        "bytes": 1055595
+      },
+      {
+        "wave": 12,
+        "file": "work/revision041/Reference/Wave-12/reference-output.csv",
+        "sha256": "ab88127417e8278102f4e98c7f2e661cacbf87c8dd12af494a7233e45c7792f0",
+        "bytes": 1224758
+      },
+      {
+        "wave": 13,
+        "file": "work/revision041/Reference/Wave-13/reference-output.csv",
+        "sha256": "b7dc6efc0fbc4ca00f3cb858736e06acf0117941a8c8854a2740b510ec5c5916",
+        "bytes": 1249270
+      },
+      {
+        "wave": 14,
+        "file": "work/revision041/Reference/Wave-14/reference-output.csv",
+        "sha256": "bbbc081343c6bfc05ad01935efc0eee2c0ae149cbc7e76ae2bff65f43f1f28de",
+        "bytes": 1245709
+      },
+      {
+        "wave": 15,
+        "file": "work/revision041/Reference/Wave-15/reference-output.csv",
+        "sha256": "bec20e1fcba8f5ce367f3abf3059ed0ed8abaad965ecfef818c5f25125fc3f90",
+        "bytes": 1179319
+      },
+      {
+        "wave": 16,
+        "file": "work/revision041/Reference/Wave-16/reference-output.csv",
+        "sha256": "5adb3118e8ed0f2c5f0a15778884f5718638efbd92f480552e3d7e5d45880ed6",
+        "bytes": 1278706
+      }
+    ],
+    "documentedProcessorComparison": {
+      "scope": "Historical R8 actual-processor measurement, all16 held-out120BPM profiles. The evidence hash identifies that numerical result; final release validation is separate.",
+      "maxGainError": 1.78813934e-07,
+      "maxAudioOutputError": 2.98023224e-08,
+      "evidence": {
+        "file": "work/revision041/Graphics-R8/curve-tools.log",
+        "sha256": "f33f9891026442365a436c41cb2c73e375f3e1fdd27f5555220d6b9178869855",
+        "bytes": 10291
+      }
+    }
+  },
+  "mix": {
+    "referenceIndependentCases": 5,
+    "referenceWave": 1,
+    "depthPercent": [
+      0,
+      25,
+      50,
+      75,
+      100
+    ],
+    "law": "output = dry + depth*(fullyDuckedOutput-dry)",
+    "maxDryOutputErrorAtZero": 5.999999996841865e-09,
+    "maxReferenceLinearInterpolationOutputError": 1.497500001779173e-08,
+    "referenceErrorsByDepth": {
+      "25": 1.1250000014895178e-08,
+      "50": 1.1250000014895178e-08,
+      "75": 1.497500001779173e-08
+    },
+    "implementationInvariantScope": "Five depth values across all16 factory profiles; mathematical/processor invariant, not80 separately rendered reference measurements.",
+    "evidence": {
+      "file": "work/revision041/Reference/mix-measurement.json",
+      "sha256": "b2b0869c641b1f725e6747bc622f2d91ce0b8b50c3e93f4572c4043453b32c43",
+      "bytes": 936
+    },
+    "dryComparisonReference": "The6e-9 dry figure compares with nominal decimal0.15. The exact float32 test input is0.15000000596046448; this number is not evidence of dry-path alteration."
+  },
+  "slope": {
+    "independentSavedGeometries": 7,
+    "verifiedReferenceWave": 1,
+    "deltaNodes": [
+      862,
+      1128,
+      1028,
+      1414,
+      2189,
+      2609,
+      1714
+    ],
+    "mapping": "positive slopePercent=deltaNodes/4014*100; node period8192",
+    "measurement": {
+      "sampleRate": 48000,
+      "bpm": 351.5625,
+      "warmupSamples": 65536,
+      "samples": 8192,
+      "mixPercent": 100,
+      "curve": 0,
+      "band": false,
+      "sync": true
+    },
+    "observedControlRule": "Wave1 controls0 and2 fixed; controls1,3,4,5 translate by a common positive x delta. All y/factor values unchanged.",
+    "productionMethod": "Precomputed uniform cubic B-spline segment polynomials; internal control translation; monotone segment search and at most20 safeguarded Newton iterations per node; four nodes followed by Catmull-Rom. No allocation, locks or8192-node rebuild in audio evaluation.",
+    "maxGainError": 1.433316721977107e-07,
+    "comparisons": [
+      {
+        "instanceOrdinal": 1,
+        "maxGainError": 1.0582080700594076e-07,
+        "rmsGainError": 1.8750008294010504e-08,
+        "worstNode": 3450
+      },
+      {
+        "instanceOrdinal": 2,
+        "maxGainError": 1.0582080700594076e-07,
+        "rmsGainError": 1.8836191338490514e-08,
+        "worstNode": 3716
+      },
+      {
+        "instanceOrdinal": 3,
+        "maxGainError": 1.032494674202411e-07,
+        "rmsGainError": 2.0467872812747658e-08,
+        "worstNode": 3863
+      },
+      {
+        "instanceOrdinal": 4,
+        "maxGainError": 1.0582080700594076e-07,
+        "rmsGainError": 2.140737228537566e-08,
+        "worstNode": 4002
+      },
+      {
+        "instanceOrdinal": 5,
+        "maxGainError": 1.0351255463891817e-07,
+        "rmsGainError": 1.9725327271752288e-08,
+        "worstNode": 5020
+      },
+      {
+        "instanceOrdinal": 6,
+        "maxGainError": 1.433316721977107e-07,
+        "rmsGainError": 3.6750193610696256e-08,
+        "worstNode": 4644
+      },
+      {
+        "instanceOrdinal": 7,
+        "maxGainError": 1.0209119127857491e-07,
+        "rmsGainError": 2.5359530254424076e-08,
+        "worstNode": 4670
+      }
+    ],
+    "referenceSources": [
+      {
+        "case": 1,
+        "deltaNodes": 862,
+        "file": "work/revision041/Reference/ProjectStateBench/saved-geometry01-sync-render/reference-output.csv",
+        "sha256": "fd2f42deb01cc2dbe5046889b175448ed91ad84c38db93acc64e25af82e8932b",
+        "bytes": 432803
+      },
+      {
+        "case": 2,
+        "deltaNodes": 1128,
+        "file": "work/revision041/Reference/ProjectStateBench/saved-geometry02-sync-render/reference-output.csv",
+        "sha256": "5225f0e5912bd2e8bf60addf9a4d78d86d0cd86d9d0718832816d3ed01a001b9",
+        "bytes": 433451
+      },
+      {
+        "case": 3,
+        "deltaNodes": 1028,
+        "file": "work/revision041/Reference/ProjectStateBench/saved-geometry03-sync-render/reference-output.csv",
+        "sha256": "e43a7164c567b757fec9c77815b22e841cbb9d90b9a79e1397bac975d07bb167",
+        "bytes": 433211
+      },
+      {
+        "case": 4,
+        "deltaNodes": 1414,
+        "file": "work/revision041/Reference/ProjectStateBench/saved-geometry04-sync-render/reference-output.csv",
+        "sha256": "eb42ed026ebdcdb0657f83f22ca12cab59fd0e88d9f4c271de0b136f95be42af",
+        "bytes": 434207
+      },
+      {
+        "case": 5,
+        "deltaNodes": 2189,
+        "file": "work/revision041/Reference/ProjectStateBench/saved-geometry05-sync-render/reference-output.csv",
+        "sha256": "5537394065e4e34fb9feea012a767ae87719dea19c85a6aa400140b8e90ed2c6",
+        "bytes": 436238
+      },
+      {
+        "case": 6,
+        "deltaNodes": 2609,
+        "file": "work/revision041/Reference/ProjectStateBench/saved-geometry06-sync-render/reference-output.csv",
+        "sha256": "f30bdfc12cc802b2f9571953474d62cc0fd50fa792421a0941ff4ed954d51e64",
+        "bytes": 437307
+      },
+      {
+        "case": 7,
+        "deltaNodes": 1714,
+        "file": "work/revision041/Reference/ProjectStateBench/saved-geometry07-sync-render/reference-output.csv",
+        "sha256": "6d66b3f2f2059ed930eba94771b78b3bd67b28f235d78f45dd5f42c1ee69875e",
+        "bytes": 435011
+      }
+    ],
+    "generalisationLimit": "Outer-fixed/internal-shift selection for the other15 forms is an implementation rule consistent with their control topology, not a verified reference SLOPE gesture. Negative values, collision limits and all16 finite tests prove numerical safety, not reference equivalence.",
+    "guiGuide": {
+      "implementationPolicy": "slopeTargetBounds: guide follows the translated editable region.",
+      "referenceGestureParity": "Not established.",
+      "withdrawnAssumption": "The guide remains fixed while SLOPE changes. A visually unchanged/no-op gesture does not establish this."
+    },
+    "microbench": {
+      "sampleRate": 48000,
+      "instances": 16,
+      "evaluations": 768000,
+      "seconds": 0.293627,
+      "microsecondsPerEvaluation": 0.382327,
+      "extremeFailures": 0,
+      "slopeZeroNodeIdentity": true,
+      "scope": "Isolated sampler only, all16 forms, SLOPE33.3, CURVE0, MSVC/O2; elapsed time, not an integrated processor CPU guarantee."
+    }
+  },
+  "oneShotTail": {
+    "independentProductionComparisons": 20,
+    "measurementScope": "All16 forcedEND1, waves13/14 held-out120BPM, wave13 at44.1kHz with fractional tail length, and one measured Wave1 SLOPE2609 geometry.",
+    "law": "Last1/64 of the physical cycle: linear interpolation from the previous actual periodic sample to the held endpoint, after Catmull-Rom sampling. The denominator remains periodSamples/64 even when fractional.",
+    "phaseStep": "DSP sample increment in physical cycle units; source MOVE/PHASE is evaluated inside the shared base-sampler callback.",
+    "end1Policy": "For measured factory forms13/14 endpoint is unity. Other14 forms use periodic phase-zero gain with the same shape settings. Wave1 nonzeroSLOPE policy is independently corroborated. Mirror/other control combinations are implementation extensions, not separately measured reference equivalence.",
+    "maxGainError": 1.6561573512596794e-07,
+    "comparisons": [
+      {
+        "name": "Wave01End1",
+        "sampleCount": 16384,
+        "maxGainError": 1.0094754487877111e-07,
+        "rmsGainError": 6.901982965193274e-09,
+        "worstSample": 8069
+      },
+      {
+        "name": "Wave02End1",
+        "sampleCount": 16384,
+        "maxGainError": 8.085852698513918e-08,
+        "rmsGainError": 7.984320848692037e-09,
+        "worstSample": 8106
+      },
+      {
+        "name": "Wave03End1",
+        "sampleCount": 16384,
+        "maxGainError": 1.0185536192253153e-07,
+        "rmsGainError": 6.8515538809277355e-09,
+        "worstSample": 8075
+      },
+      {
+        "name": "Wave04End1",
+        "sampleCount": 16384,
+        "maxGainError": 1.0185536192253153e-07,
+        "rmsGainError": 7.853920537156256e-09,
+        "worstSample": 8075
+      },
+      {
+        "name": "Wave05End1",
+        "sampleCount": 16384,
+        "maxGainError": 9.70555804613582e-08,
+        "rmsGainError": 7.943264199995919e-09,
+        "worstSample": 8074
+      },
+      {
+        "name": "Wave06End1",
+        "sampleCount": 16384,
+        "maxGainError": 1.0280533813133985e-07,
+        "rmsGainError": 5.833347842824076e-09,
+        "worstSample": 8074
+      },
+      {
+        "name": "Wave07End1",
+        "sampleCount": 16384,
+        "maxGainError": 4.701421030262054e-08,
+        "rmsGainError": 6.557828444049786e-09,
+        "worstSample": 8141
+      },
+      {
+        "name": "Wave08End1",
+        "sampleCount": 16384,
+        "maxGainError": 7.51891451322706e-08,
+        "rmsGainError": 6.009086761018067e-09,
+        "worstSample": 8112
+      },
+      {
+        "name": "Wave09End1",
+        "sampleCount": 16384,
+        "maxGainError": 2.648320940323856e-08,
+        "rmsGainError": 3.54050619332899e-09,
+        "worstSample": 4072
+      },
+      {
+        "name": "Wave10End1",
+        "sampleCount": 16384,
+        "maxGainError": 2.648320940323856e-08,
+        "rmsGainError": 4.480505282454177e-09,
+        "worstSample": 4055
+      },
+      {
+        "name": "Wave11End1",
+        "sampleCount": 16384,
+        "maxGainError": 4.4874396309957376e-08,
+        "rmsGainError": 3.330297960073671e-09,
+        "worstSample": 8174
+      },
+      {
+        "name": "Wave12End1",
+        "sampleCount": 16384,
+        "maxGainError": 4.4874396309957376e-08,
+        "rmsGainError": 5.392672027805543e-09,
+        "worstSample": 8174
+      },
+      {
+        "name": "Wave13End1",
+        "sampleCount": 16384,
+        "maxGainError": 1.041799206902283e-07,
+        "rmsGainError": 9.538574806042763e-09,
+        "worstSample": 8153
+      },
+      {
+        "name": "Wave14End1",
+        "sampleCount": 16384,
+        "maxGainError": 9.811779833057699e-08,
+        "rmsGainError": 6.591435534622402e-09,
+        "worstSample": 8183
+      },
+      {
+        "name": "Wave15End1",
+        "sampleCount": 16384,
+        "maxGainError": 2.658253450693593e-08,
+        "rmsGainError": 5.022060292776659e-09,
+        "worstSample": 6037
+      },
+      {
+        "name": "Wave16End1",
+        "sampleCount": 16384,
+        "maxGainError": 8.267631679270693e-08,
+        "rmsGainError": 7.421111183913052e-09,
+        "worstSample": 8075
+      },
+      {
+        "name": "Wave13120BPM",
+        "sampleCount": 35744,
+        "maxGainError": 1.6543621483844362e-07,
+        "rmsGainError": 3.1812094264527176e-08,
+        "worstSample": 13342
+      },
+      {
+        "name": "Wave14120BPM",
+        "sampleCount": 35744,
+        "maxGainError": 1.641682279007739e-07,
+        "rmsGainError": 2.1081223595119982e-08,
+        "worstSample": 8342
+      },
+      {
+        "name": "Wave1344100",
+        "sampleCount": 30000,
+        "maxGainError": 1.6561573512596794e-07,
+        "rmsGainError": 3.315241967527126e-08,
+        "worstSample": 12340
+      },
+      {
+        "name": "Wave1Slope2609End1",
+        "sampleCount": 16384,
+        "maxGainError": 1.433316721977107e-07,
+        "rmsGainError": 2.9199423236253773e-08,
+        "worstSample": 4644
+      }
+    ],
+    "evidence": {
+      "file": "work/revision041/Reference/tail-production-fit.json",
+      "sha256": "33cc656c149288637bd400632c9d1f6a2194645a9d56478f0f0483e7b5f38873",
+      "bytes": 4247
+    },
+    "rawSourceHashes": [
+      {
+        "wave": 1,
+        "file": "work/revision041/Reference/OneShotEnd1/wave01-end1-render/reference-output.csv",
+        "sha256": "1f731f4c92487f050a3b0c7ea5ab58f00db137c2d2396b9dfcb2325bd4450cdb",
+        "bytes": 878484
+      },
+      {
+        "wave": 2,
+        "file": "work/revision041/Reference/OneShotEnd1/wave02-end1-render/reference-output.csv",
+        "sha256": "f42c8d8ba2e36ce45a12fd2bebf7cae4519705c72698d848829ede90e3aae7a1",
+        "bytes": 878000
+      },
+      {
+        "wave": 3,
+        "file": "work/revision041/Reference/OneShotEnd1/wave03-end1-render/reference-output.csv",
+        "sha256": "86cd4692da06a5327f8f8b5d2f59d69337fb9183b8f5dcc4640ac431b74bf1f7",
+        "bytes": 872853
+      },
+      {
+        "wave": 4,
+        "file": "work/revision041/Reference/OneShotEnd1/wave04-end1-render/reference-output.csv",
+        "sha256": "319a7ccf72932b10a516cbcf2ba8030d833e897aee1bb32600acb186f4882708",
+        "bytes": 882295
+      },
+      {
+        "wave": 5,
+        "file": "work/revision041/Reference/OneShotEnd1/wave05-end1-render/reference-output.csv",
+        "sha256": "fac115630a4273e0f2bea47c74cb4543498c3643b90bd7958a9fed82816be53d",
+        "bytes": 882246
+      },
+      {
+        "wave": 6,
+        "file": "work/revision041/Reference/OneShotEnd1/wave06-end1-render/reference-output.csv",
+        "sha256": "e6b13f502be724a2a537907684eb65e5dae81f4c2ccf3819eefd66a28c3fda02",
+        "bytes": 868610
+      },
+      {
+        "wave": 7,
+        "file": "work/revision041/Reference/OneShotEnd1/wave07-end1-render/reference-output.csv",
+        "sha256": "965944c12cd661ee91fe127652009f30828f240ef78c9928ebc85e6a38bd7189",
+        "bytes": 878056
+      },
+      {
+        "wave": 8,
+        "file": "work/revision041/Reference/OneShotEnd1/wave08-end1-render/reference-output.csv",
+        "sha256": "2f811f198587a57b699a74306481245d219ab9b5383aa8579ef1352dc0f2d7b0",
+        "bytes": 883753
+      },
+      {
+        "wave": 9,
+        "file": "work/revision041/Reference/OneShotEnd1/wave09-end1-render/reference-output.csv",
+        "sha256": "8ff05dca6e77408524f24909470e1505f75fe3cdbeb0f7999c630fed4c7463e3",
+        "bytes": 777864
+      },
+      {
+        "wave": 10,
+        "file": "work/revision041/Reference/OneShotEnd1/wave10-end1-render/reference-output.csv",
+        "sha256": "1a69590a0923df8d53de11831dc83ab4f8009f682d9f88c3c70c8cb1fa1dbe45",
+        "bytes": 747443
+      },
+      {
+        "wave": 11,
+        "file": "work/revision041/Reference/OneShotEnd1/wave11-end1-render/reference-output.csv",
+        "sha256": "e518f0fb822ad961d601304daddd1fc1fd4e3264d0bef1f7797bfe180e475557",
+        "bytes": 797271
+      },
+      {
+        "wave": 12,
+        "file": "work/revision041/Reference/OneShotEnd1/wave12-end1-render/reference-output.csv",
+        "sha256": "9270e66017012c5b4bbeb89cf5169c6dc032d10eb6f168a64b392cb08c9e5d07",
+        "bytes": 855036
+      },
+      {
+        "wave": 13,
+        "file": "work/revision041/Reference/OneShotEnd1/wave13-end1-render/reference-output.csv",
+        "sha256": "9e46ec61b9427519173904aa0a88ddf90f4b68ebd677ae28508c40a32c0d4af3",
+        "bytes": 861997
+      },
+      {
+        "wave": 14,
+        "file": "work/revision041/Reference/OneShotEnd1/wave14-end1-render/reference-output.csv",
+        "sha256": "369061569303135f2011afe453485488eb1758359876ce967022f8f9005373af",
+        "bytes": 860776
+      },
+      {
+        "wave": 15,
+        "file": "work/revision041/Reference/OneShotEnd1/wave15-end1-render/reference-output.csv",
+        "sha256": "7c21ecd9fe70b39d87f7fed084578bc1cc1f21c09e0b1278ef1d0f76c78703b4",
+        "bytes": 756727
+      },
+      {
+        "wave": 16,
+        "file": "work/revision041/Reference/OneShotEnd1/wave16-end1-render/reference-output.csv",
+        "sha256": "b2638ee1304b27223cce4010042214029aedbdbd280151d763d47f1e09120b75",
+        "bytes": 888444
+      },
+      {
+        "file": "work/revision041/Reference/TriggerBench/type2-smooth0-midi60-wave13-render/reference-output.csv",
+        "sha256": "820c6d5aa5d4bfd277a0abf88872afbabbe8dde76ea6c3fd97c25344c4fa40bd",
+        "bytes": 1869907
+      },
+      {
+        "file": "work/revision041/Reference/TriggerBench/type2-smooth0-midi60-wave14-render/reference-output.csv",
+        "sha256": "39e753aa128a971fa46fb5df75eb0d30b07e1dbadf4672c3a5f74992d788d91f",
+        "bytes": 1866330
+      },
+      {
+        "file": "work/revision041/Reference/OneShotEnd1/wave13-end1-sr44100-render/reference-output.csv",
+        "sha256": "dfa529102abcc06e38cd291d7f9d063303583fabcdb122ae7002b4b1d643a5a6",
+        "bytes": 1618788
+      },
+      {
+        "file": "work/revision041/Reference/OneShotEnd1/wave01-slope2609-end1-render/reference-output.csv",
+        "sha256": "13c0e37ddca41edabcbcba9fd371e5ba316ae39cc444ff685fc5a1a481d0ec6b",
+        "bytes": 885250
+      }
+    ]
+  },
+  "band": {
+    "independentImpulseCases": 6,
+    "sampleRate": 48000,
+    "mixPercent": 0,
+    "cutoffsHz": [
+      20,
+      320,
+      5120
+    ],
+    "modes": [
+      "lowSolo",
+      "fullReconstruction"
+    ],
+    "implementation": "Independent first-order bilinear/TPT low-pass with complementary high path.",
+    "scope": "Isolated production C++ helper compared with reference impulse PCM. Final integrated audio and release validation are separate gates.",
+    "maxAudioOutputError": 5.58793544769e-09,
+    "fullReconstructionSampleExact": true,
+    "cases": [
+      {
+        "cutoffHz": 20,
+        "solo": true,
+        "maxAudioOutputError": 8.98601433342e-36,
+        "referenceCsv": {
+          "file": "work/revision041/Reference/Band-20-Solo/reference-output.csv",
+          "sha256": "4966f2250d3be65318f90cc688f6dd4b378d1f3f6bbc60920a8445b49c2ad468",
+          "bytes": 1512479
+        }
+      },
+      {
+        "cutoffHz": 20,
+        "solo": false,
+        "maxAudioOutputError": 0.0,
+        "referenceCsv": {
+          "file": "work/revision041/Reference/Band-20-Full/reference-output.csv",
+          "sha256": "7b18dbc4b059fbd1a9e2da044ae431c776761ec9d43453ffb49a3d78fe9dba92",
+          "bytes": 1064009
+        }
+      },
+      {
+        "cutoffHz": 320,
+        "solo": true,
+        "maxAudioOutputError": 9.31322574615e-10,
+        "referenceCsv": {
+          "file": "work/revision041/Reference/Band-320-Solo/reference-output.csv",
+          "sha256": "5596f3e48557e8aea4515fef2e208e221fef8ee8b11aa249ba99ab87db403e0d",
+          "bytes": 1515321
+        }
+      },
+      {
+        "cutoffHz": 320,
+        "solo": false,
+        "maxAudioOutputError": 0.0,
+        "referenceCsv": {
+          "file": "work/revision041/Reference/Band-320-Full/reference-output.csv",
+          "sha256": "7b18dbc4b059fbd1a9e2da044ae431c776761ec9d43453ffb49a3d78fe9dba92",
+          "bytes": 1064009
+        }
+      },
+      {
+        "cutoffHz": 5120,
+        "solo": true,
+        "maxAudioOutputError": 5.58793544769e-09,
+        "referenceCsv": {
+          "file": "work/revision041/Reference/Band-5120-Solo/reference-output.csv",
+          "sha256": "0ccd65f84ca08350b123ce5d1636516d78e40a05a40fa3a82b921ffc9f5ac8ea",
+          "bytes": 1515565
+        }
+      },
+      {
+        "cutoffHz": 5120,
+        "solo": false,
+        "maxAudioOutputError": 0.0,
+        "referenceCsv": {
+          "file": "work/revision041/Reference/Band-5120-Full/reference-output.csv",
+          "sha256": "7b18dbc4b059fbd1a9e2da044ae431c776761ec9d43453ffb49a3d78fe9dba92",
+          "bytes": 1064009
+        }
+      }
+    ],
+    "evidence": {
+      "file": "work/revision041/HelperProof/result.log",
+      "sha256": "43d3aa04798a0d28a72bde59e16f2f84eeb71cc1268c223373db2878dd52c303",
+      "bytes": 491
+    }
+  },
+  "latency": {
+    "referenceMeasured": {
+      "syncSamples": 0,
+      "midiAntiClickOffSamples": 0,
+      "midiAntiClickOnSamples": {
+        "44100": 265,
+        "48000": 289,
+        "96000": 577
+      },
+      "audioAt48000": {
+        "antiClickOff": 480,
+        "antiClickOn": 769
+      }
+    },
+    "implementationFormula": "MIDI anti-click=floor(sampleRate*.006)+1 samples; AUDIO addsfloor(sampleRate*.010). Sync has0. Audio reference formula across other rates is not asserted from the48k-only measurements.",
+    "referenceMIDIOnset": "Anti-click off: note-on at sample48256 starts Wave1 at exactly that sample in the configured probe. Note-off512samples later does not abort the one-shot.",
+    "limitations": [
+      "Exact reference anti-click transition shape is not reproduced or claimed. The implementation uses its independently tested anticipated cubic correction.",
+      "Audio sidechain onset/detector/retrigger equivalence is not established by these data. Initial synthetic sidechain probes did not produce a sufficiently validated onset measurement.",
+      "Matching PDC values does not prove matching onset, detection threshold, or retrigger behaviour."
+    ],
+    "evidence": {
+      "file": "work/revision041/Reference/trigger-benchmark.json",
+      "sha256": "4a759a79696c0d7a5d41a1d369c4abc85e783a336262e0ccfa9d7cf04b0dd76f",
+      "bytes": 22006
+    }
+  },
+  "independentAntiClickVerification": {
+    "scope": "Implementation helper versus independently summed cubic corrections; not versus reference transition PCM.",
+    "maxOutputError": 7.34762992116e-09,
+    "maxUnityJumpSampleStep": 0.0051903128624,
+    "evidence": {
+      "file": "work/revision041/HelperProof/result.log",
+      "sha256": "43d3aa04798a0d28a72bde59e16f2f84eeb71cc1268c223373db2878dd52c303",
+      "bytes": 491
+    }
+  },
+  "numericalPublicControlReconstruction": {
+    "defaultNodes": 131072,
+    "maxGainError": 9.019916769048564e-08,
+    "mutatedPublicSettingsCases": 10,
+    "maxMutatedGainError": 8.845136001411902e-08,
+    "interpretation": "Point factor behaves as multiplicity in a periodic uniform cubic B spline. No reference implementation code was inspected."
+  },
+  "evidenceManifest": [
+    {
+      "file": "work/revision041/Reference/reference-nodes8192.json",
+      "sha256": "4da8761c1efaa2fa094a76b32f1285cc8a1442f945d4aed61fde4b1e4cca8306",
+      "bytes": 2326441
+    },
+    {
+      "file": "work/revision041/Reference/catmull8192-float-storage-fit.json",
+      "sha256": "42e646eb170b0c3ac76de89881af8f1136105f450b16ef221260733adf680ad6",
+      "bytes": 3387
+    },
+    {
+      "file": "work/revision041/Reference/mix-measurement.json",
+      "sha256": "b2b0869c641b1f725e6747bc622f2d91ce0b8b50c3e93f4572c4043453b32c43",
+      "bytes": 936
+    },
+    {
+      "file": "work/revision041/Reference/spline-production-fit.json",
+      "sha256": "274b275fc572e339ab0aa200504b410c5c5a628b5296c7f40e9832e1590e4ef4",
+      "bytes": 1611
+    },
+    {
+      "file": "work/revision041/Reference/tail-production-fit.json",
+      "sha256": "33cc656c149288637bd400632c9d1f6a2194645a9d56478f0f0483e7b5f38873",
+      "bytes": 4247
+    },
+    {
+      "file": "work/revision041/Reference/oneshot-end1-all16.json",
+      "sha256": "a0c5cee29ba32ac4b8d72d4f5d48a10af1f4e13ca8ba70510f73705819ea987e",
+      "bytes": 4406
+    },
+    {
+      "file": "work/revision041/Reference/oneshot-linear-tail-audio-grid-fit.json",
+      "sha256": "21c7679d38decd617a5e21d0f2f9fdf62716931f43e00a4edf17479483585fe7",
+      "bytes": 613
+    },
+    {
+      "file": "work/revision041/Reference/public-bspline-fit.json",
+      "sha256": "7d8b58ef03ff1b5951bda008b407487d16af9a27f9e8a8897a0e5e57e5dfa52c",
+      "bytes": 7967
+    },
+    {
+      "file": "work/revision041/Reference/band-measurement.json",
+      "sha256": "a5de6686fe0fd2490ff900207e1f1261ac2f2635301215333d93b1b3202e45fa",
+      "bytes": 25357
+    },
+    {
+      "file": "tests/fixtures/measured4/reference-120bpm.json",
+      "sha256": "e537c8c2847282bd774a42df104aa294c8702c3e17f380317bb92ce28039e818",
+      "bytes": 2961
+    },
+    {
+      "file": "tests/fixtures/measured4/reference-120bpm-f32.bin",
+      "sha256": "c3010b6e6afe6bfcdb6a82ed1e29a1ece6f8f027579d7bbbb5404c298bcbfde6",
+      "bytes": 1536028
+    },
+    {
+      "file": "tests/fixtures/measured4/reference-slope-seven.json",
+      "sha256": "cbd7065359637c6294854f32928dd9bab8147617aa28543ed5c9613f4c8852d8",
+      "bytes": 1798
+    },
+    {
+      "file": "tests/fixtures/measured4/reference-slope-seven-f32.bin",
+      "sha256": "5a4cc5db1e10aa2c44eb04e0f3791a04cec8ed6d90cfc49101b8ea72c8d83ba6",
+      "bytes": 229432
+    },
+    {
+      "file": "tests/fixtures/measured4/reference-band-impulses.json",
+      "sha256": "4e8c500e07b45cf211a510c1c7677aa9a224be62e883681c57c2bce904d94935",
+      "bytes": 1441
+    },
+    {
+      "file": "tests/fixtures/measured4/reference-band-impulses-f32.bin",
+      "sha256": "55a303ec80e6dd1c84a68e872eb34f87becd31039cfce5492b2c4339e916fc69",
+      "bytes": 1572952
+    }
+  ],
+  "productionHeadersAtConsolidation": [
+    {
+      "file": "Source/MeasuredCurveBank4.h",
+      "sha256": "58a69d8990185cd11683314a0faa2ad54ee805f003f891feae87e04978fd0b7a",
+      "bytes": 1269742
+    },
+    {
+      "file": "Source/MeasuredSpline4.h",
+      "sha256": "b91b653b2ec0fa16c47673780aac09ce5bc47c51f22604b6a18fb303ba9a229a",
+      "bytes": 35011
+    },
+    {
+      "file": "Source/MeasuredOneShot4.h",
+      "sha256": "e080b2f3774ac298cc3b3ec600833ec93854b7b6770fb917e06d5ba1de67020e",
+      "bytes": 1433
+    },
+    {
+      "file": "Source/MeasuredTemplateAudio4.h",
+      "sha256": "5a9dfc366225861da7ec9b89bdd4a1a8934f3e1b4b59c73800994750272e21da",
+      "bytes": 4443
+    },
+    {
+      "file": "Source/TemplateGeometry.h",
+      "sha256": "4f9ae47c4808f5479e893fe59b36edcaa75e58c49d5024a2bf654b0f01b8369c",
+      "bytes": 6394
+    }
+  ]
+}

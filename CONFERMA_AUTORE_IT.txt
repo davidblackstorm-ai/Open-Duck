@@ -1,0 +1,3 @@
+CONFERMA AUTORE — 29/10/2026
+L'utente David Blackstorm ha dichiarato in chat che la grafica e stata creata da lui e che tutto il progetto e di sua proprieta, autorizzando la condivisione dei materiali per test e collaborazione.
+Questa conferma aggiorna le precedenti note di sospensione sulla grafica. Non modifica le licenze delle dipendenze: conservarne integralmente gli avvisi. LICENSE.txt contiene AGPL v3. Non si afferma che licenze di terzi siano trasferite o sostituite.

@@ -1,0 +1,12 @@
+build/
+build-*/
+work/
+releases/
+.vs/
+.idea/
+__pycache__/
+*.pyc
+*.pdb
+*.obj
+.env
+.env.*

@@ -1,0 +1,57 @@
+{
+  "provenance": "Seven user-authorized independent reference profile render measurements; PCM and aggregate numeric settings only; no project or XML content",
+  "wave": 1,
+  "sampleRate": 48000,
+  "bpm": 351.5625,
+  "warmup": 65536,
+  "mixPercent": 100,
+  "curve": 0,
+  "band": false,
+  "format": "ODXSLOP4 magic8; LE int32 cases/periodSamples/rate; LE float32 bpm/input; per-case int32 deltaNodes followed by float32 output PCM",
+  "slopePercentMapping": "deltaNodes/4014*100",
+  "binarySha256": "5a4cc5db1e10aa2c44eb04e0f3791a04cec8ed6d90cfc49101b8ea72c8d83ba6",
+  "sources": [
+    {
+      "case": 1,
+      "deltaNodes": 862,
+      "samples": 8192,
+      "csvSha256": "fd2f42deb01cc2dbe5046889b175448ed91ad84c38db93acc64e25af82e8932b"
+    },
+    {
+      "case": 2,
+      "deltaNodes": 1128,
+      "samples": 8192,
+      "csvSha256": "5225f0e5912bd2e8bf60addf9a4d78d86d0cd86d9d0718832816d3ed01a001b9"
+    },
+    {
+      "case": 3,
+      "deltaNodes": 1028,
+      "samples": 8192,
+      "csvSha256": "e43a7164c567b757fec9c77815b22e841cbb9d90b9a79e1397bac975d07bb167"
+    },
+    {
+      "case": 4,
+      "deltaNodes": 1414,
+      "samples": 8192,
+      "csvSha256": "eb42ed026ebdcdb0657f83f22ca12cab59fd0e88d9f4c271de0b136f95be42af"
+    },
+    {
+      "case": 5,
+      "deltaNodes": 2189,
+      "samples": 8192,
+      "csvSha256": "5537394065e4e34fb9feea012a767ae87719dea19c85a6aa400140b8e90ed2c6"
+    },
+    {
+      "case": 6,
+      "deltaNodes": 2609,
+      "samples": 8192,
+      "csvSha256": "f30bdfc12cc802b2f9571953474d62cc0fd50fa792421a0941ff4ed954d51e64"
+    },
+    {
+      "case": 7,
+      "deltaNodes": 1714,
+      "samples": 8192,
+      "csvSha256": "6d66b3f2f2059ed930eba94771b78b3bd67b28f235d78f45dd5f42c1ee69875e"
+    }
+  ]
+}

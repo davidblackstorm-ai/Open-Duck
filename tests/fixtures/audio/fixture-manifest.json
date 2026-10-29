@@ -1,0 +1,20 @@
+{
+  "scope": "Byte-identical dedicated LAB fixture WAVs; no ASD, user settings or logs.",
+  "bpm": 145,
+  "sampleRate": 44100,
+  "channels": 2,
+  "files": [
+    {
+      "name": "LAB-Kick-145.wav",
+      "bytes": 1167932,
+      "sha256": "b9c10ae0afbd45016cabb8535fc2f284caa6942d6f1d6ffac84f641e9359df28",
+      "source": "OpenDuck Pro X - TEST LAB Project/Samples/Imported/LAB-Kick-145.wav"
+    },
+    {
+      "name": "LAB-Bass-145.wav",
+      "bytes": 1167932,
+      "sha256": "7c9924eaf10ea580d2a23a17313f4aa8e74a49d0d82f76448807962eab908cf2",
+      "source": "OpenDuck Pro X - TEST LAB Project/Samples/Imported/LAB-Bass-145.wav"
+    }
+  ]
+}

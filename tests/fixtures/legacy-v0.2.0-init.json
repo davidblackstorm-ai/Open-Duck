@@ -1,0 +1,13 @@
+{
+  "description": "Authentic INIT state exported from the archived release VST3 through an independent JUCE VST3 host, before changing any parameter",
+  "version": "0.2.0",
+  "schema": 2,
+  "fixture": "legacy-v0.2.0-init.odpx",
+  "sha256": "bababb2e11ef3758b77fa262a8698a6cc4e511e206419e0ef58401854229a507",
+  "sourceBinarySHA256": "4790d534b47ccf579a884a73d0884386f22cb146ab18fb7795ff523741a76eff",
+  "sourceBundle": "work/v0.3.0/baseline-0.2.0/OpenDuck Pro X.vst3",
+  "exportCommand": "OpenDuckHostContract <archived-0.2.0-bundle> --export-init <fixture>",
+  "purpose": "Preserve historical schema2 DSP and trigger assertions while revision3 contracts are tested separately",
+  "productionInstallPerformed": false,
+  "abletonUsed": false
+}

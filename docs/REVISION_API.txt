@@ -1,0 +1,112 @@
+OpenDuck Pro X - native revision API
+
+Processor-owned files: Source/PluginProcessor.h, PluginProcessor.cpp,
+BehaviorLibrary.h, Engines.h. Other agents own the editor and tests.
+All writes for this revision are staged under this C: workspace. Root copies to E:.
+
+CURVE SLOTS AND PARAMETERS
+There are six independent slots in fixed engine order:
+0 Classic, 1 Spectral, 2 Multiband, 3 Morph, 4 Groove, 5 Transient.
+curveParameterId("amount", mode) returns "curveAmountN". The following new IDs
+are appended after ALL original parameters, in slot-major order:
+  shape 0..16 (16 = Custom), phase -50..50 percent of cycle,
+  length .05..1, tension -100..100, amount 0..100,
+  attack .1..100 ms, release 5..2000 ms, grid 0..6,
+  band bool (default false), focus 20..20000 Hz (default 160).
+Shape, amount, attack, release, phase, tension, grid, BAND and FOCUS controls
+must bind to the selected slot's new IDs. Global mix remains "mix"; new-instance
+INIT sets it to 80. Global swing remains "swing" and affects all slot clocks.
+No selected/UI parameter is read in the DSP processing routine.
+
+PUBLIC TYPES / FUNCTIONS
+OpenDuckProcessor::CurvePoint = odx::CurvePoint {float x, y}.
+CurveSnapshot contains points[256], count, shape, grid, presetId,
+phase, length, tension, amount, attack, release, focus,
+custom, linear, edit, freeDraw, band, legacy.
+  getCurveSnapshot(int mode=-1) const
+  static sampleCurve(const CurveSnapshot&, float cycle) -> envelope 0..1
+  setCurveSnapshot(int mode, const CurveSnapshot&, const juce::String& transaction={})
+  setCustomCurve(int mode, const CurveSnapshot&, const juce::String& transaction={})
+  editPointsEnabled(int mode=-1) const
+  setEditPointsEnabled(bool, int mode=-1)
+  freeDrawEnabled(int mode=-1) const
+  setFreeDrawEnabled(bool, int mode=-1)
+  usesModernCurves(int mode=-1) const
+Negative mode means the currently selected GUI slot; this resolution happens
+only in API calls outside processBlock. Pass explicit mode for editor gestures.
+setCurveSnapshot preserves the custom flag and validates all numeric fields.
+setCustomCurve forces Custom=16. Valid custom curves have at least two points;
+invalid/nonfinite points are removed, X sorted/deduplicated, endpoints fixed at
+0 and 1, X/Y bounded 0..1. Smooth interpolation uses bounded smoothstep;
+linear=true supports FREE DRAW and sawtooth/ramp segments.
+Edits use the processor's UndoManager. Supply a transaction name at gesture
+start; subsequent updates may pass an empty name to remain in that transaction.
+EDIT POINTS and FREE DRAW are UI state only; disabling them hides editing but
+does not discard the audible custom curve. INIT and factory application disable
+both flags. An enabled FREE DRAW flag implies EDIT POINTS enabled.
+The editor draws the gain as 1 - mix/100 * amount/100 * (1 - sampleCurve(...)).
+Morph's audible envelope interpolates Soft Duck -> selected curve using the
+existing global morph parameter; editor mode-specific display should reflect it.
+
+700 FACTORY PRESETS
+  static factoryPresets() -> const std::array<BehaviorPreset,700>&
+  static factoryPresetName(int id) -> String
+  static factoryCategoryNames() -> array of 7 names
+  static factoryShapeNames() -> array of 16 names
+  applyBehaviorPreset(int id, int mode=-1)
+  currentBehaviorPresetId(int mode=-1) const
+BehaviorPreset fields: id, category, shape, grid, phase, length, tension,
+amount, mix, attack, release, name.
+IDs are stable 0..699; category is id/100; apply wraps negative/positive IDs.
+Each of seven categories has 100 combinations, matching the approved concept.
+Preset 0 is INIT / Soft Duck: shape0, phase0, length1, tension0, amount100,
+attack10, release150, grid1/4. All preset mix metadata is 80; application leaves
+global MIX unchanged to avoid changing other active engines.
+Preset application changes only the target slot's envelope parameters and UI
+edit state. It preserves slot BAND/FOCUS and global mix, selected, ON/SOLO,
+trigger, sync, BPM, swing, routing, spectral/multiband/detail settings.
+
+LEGACY / SERIALIZATION
+Old IDs, ranges and ordering are retained exactly, including six-choice "shape"
+with Custom=5, old shift/tension and eight point0..point7 parameters.
+Never expand or renumber that old choice: old normalized automation must survive.
+schema1 loads modernMask=0 (all slots legacy), with old parameter values intact.
+New-slot controls are populated from the old state for subsequent editing.
+With modernMask=0, processLegacyBlock is the original processor implementation.
+Applying a new preset or changing a new slot parameter modernizes only that slot;
+unmodified legacy slots still read the original global legacy parameters.
+Undoing the first curve edit can restore that slot's legacy flag.
+
+New saves use schema=2 and modernMask (bits0..5) on the APVTS root. Child Curves
+contains exactly six Curve children, each with mode, preset, linear, edit,
+freeDraw and count properties and count Point children with X/Y. Numeric DSP
+parameters remain normal APVTS PARAM children. Unknown schemas, malformed curves
+and nonfinite point/state values are ignored before committing any state.
+Opening/closing/recreating an editor does not apply INIT or reset processor state.
+
+REAL-TIME AND ENGINE LIMITS
+Audio takes fixed-size curve snapshots only at block start using a nonblocking
+try-lock. Busy UI publication reuses the previous valid snapshot for one block;
+the callback does not allocate or wait. APVTS pointers are cached.
+All six engines use their own curve/phase/grid/amount/attack/release, with the
+original global transport/audio/MIDI trigger selection. MIDI notes are sample
+offset accurate; no note means no triggered envelope. Transient keeps the
+existing follower/threshold/hysteresis/hold and gates the selected curve.
+Host phase rotates cyclically; AUDIO/MIDI phase rotates within an envelope
+after its trigger, and does not promise noncausal pre-trigger attenuation.
+
+Engines.h retains the same WOLA FFT and FIR code. SpectralEngine::process adds
+an optional final pointer to array<FocusMask,6>, where FocusMask={depth,cutoff}.
+nullptr follows the unchanged legacy gain expression. BAND routes only that
+slot's reduction into the selective low-frequency mask. Multiple masks use max
+attenuation, with the existing fullband/band reduction budget respected.
+FOCUS changes are smoothed over 25 ms. The edge fades over at least two FFT bins;
+frequency resolution is sampleRate/1024 (46.875 Hz at 48 kHz), not an ideal brick
+wall at an arbitrary display frequency. BAND off leaves this path inactive.
+Reported/measured latency remains 1152 samples; smoothed bypass/mix remain aligned.
+
+VALIDATION STATUS
+Processor.cpp passed MSVC /Zs syntax validation against JUCE8.0.9 and current
+staging editor headers. Root still owns the full linked build, processor tests,
+validators, host QA and installer. No system plugin installation is authorized
+for this revision; the user will run the produced installer personally.

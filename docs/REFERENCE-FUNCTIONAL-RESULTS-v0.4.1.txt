@@ -1,0 +1,27 @@
+BLACK CIRCUIT — OPENDUCK 0.4.1
+Risultati del confronto funzionale — 29 ottobre 2026
+
+Riferimento misurato: Kickstart 2 VST3 2.0.1 installato, identificato tramite SHA-256. Host indipendente, segnali sintetici e stati pubblici autorizzati; nessun dispositivo audio aperto. Non sono stati esaminati codice eseguibile, licenze o DRM. Il confronto riguarda i casi elencati, non certifica equivalenza completa.
+
+Risultati numerici
+- 16 curve statiche: ricostruzione Catmull-Rom, errore massimo di gain 1,91e-7. Misura documentata del processore R8: errore massimo dei campioni audio 2,98e-8. Il relativo hash identifica quella misura; i controlli della build consegnata sono separati.
+- MIX: cinque misure indipendenti 0/25/50/75/100 sulla prima forma confermano la profondità lineare; errore massimo dei campioni 1,50e-8. La stessa legge è verificata come invariante sui 16 profili dell'implementazione.
+- SLOPE: sette geometrie salvate indipendenti della prima forma, con traslazione dei controlli interni e due controlli esterni fissi. Errore massimo di gain del campionatore compilato: 1,44e-7.
+- One shot: venti confronti, inclusi tutti i 16 endpoint, 120 BPM, 44,1 kHz e una geometria SLOPE. Errore massimo di gain: 1,66e-7. L'ultimo 1/64 di ciclo interpola linearmente l'ultimo campione periodico reale verso il valore mantenuto; il calcolo avviene dopo Catmull-Rom sulla griglia audio fisica.
+- BAND: sei risposte impulsive, 20/320/5120 Hz, low solo e ricostruzione completa. Helper C++: errore massimo dei campioni 5,59e-9; ricostruzione completa esatta nei casi misurati.
+
+Latenze del riferimento
+SYNC: zero. MIDI senza smoothing: zero; con smoothing: 265/289/577 campioni a 44,1/48/96 kHz. AUDIO a 48 kHz: 480 campioni senza smoothing, 769 con smoothing. Valori di latenza uguali non dimostrano uguale rilevamento degli attacchi.
+
+Limiti espliciti
+La regola SLOPE delle altre 15 forme è una generalizzazione geometrica dell'implementazione: non sono stati acquisiti gesti SLOPE validi del riferimento per ciascuna. Prove di finitezza agli estremi non equivalgono a tali confronti. La guida ora segue slopeTargetBounds; la precedente ipotesi di guida fissa è ritirata perché il gesto osservato non aveva prodotto modifiche salvate.
+
+La transizione anti-click resta un algoritmo indipendente verificato, senza dichiarazione di identità con quella del riferimento. Non è dimostrata equivalenza del detector AUDIO, delle soglie o dei retrigger. Le combinazioni non misurate di trasformazioni e automazioni richiedono i controlli dedicati della release.
+
+Controlli di rilascio separati
+La regressione mirata dei sei scope legacy, configurata esplicitamente con profileModel4=0, risulta 108 verifiche superate e zero fallite. La waveform MAIN indipendente del nuovo motore ha controlli dedicati Revision041. Questo risultato mirato non sostituisce la nuova suite completa, la verifica della build effettiva in host, il validator e le prove di aggiornamento e disinstallazione. Fanno fede soltanto ricevute riuscite e aggiornate con gli stessi hash dei file consegnati; questo rapporto non dichiara conclusi tali controlli.
+
+Hash, condizioni, singoli errori e provenienza numerica sono in FUNCTIONAL-COMPARISON-v0.4.1.json. Nessun XML privato, progetto, nome di traccia o percorso personale è incluso.
+
+Manuale ufficiale: https://downloads.cableguys.com/Nicky-Romero-Kickstart-2-Manual.pdf?v=2.0.8
+Il documento pubblico consultato riporta v2.0.9; le misure sopra appartengono esclusivamente alla versione installata 2.0.1.

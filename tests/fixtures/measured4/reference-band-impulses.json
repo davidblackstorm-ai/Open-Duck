@@ -1,0 +1,43 @@
+{
+  "provenance": "Independent installed reference VST3 black-box impulse PCM; MIX0 at48kHz; SOLO=low band, FULL=complementary reconstruction; no OpenDuck samples",
+  "format": "ODXBAND4 magic8; LE int32 cases/rate; per-case LE int32 cutoff/solo/count, then interleaved LE float32 input/output",
+  "binarySha256": "55a303ec80e6dd1c84a68e872eb34f87becd31039cfce5492b2c4339e916fc69",
+  "sources": [
+    {
+      "cutoff": 20,
+      "kind": "Solo",
+      "samples": 32768,
+      "csvSha256": "4966f2250d3be65318f90cc688f6dd4b378d1f3f6bbc60920a8445b49c2ad468"
+    },
+    {
+      "cutoff": 20,
+      "kind": "Full",
+      "samples": 32768,
+      "csvSha256": "7b18dbc4b059fbd1a9e2da044ae431c776761ec9d43453ffb49a3d78fe9dba92"
+    },
+    {
+      "cutoff": 320,
+      "kind": "Solo",
+      "samples": 32768,
+      "csvSha256": "5596f3e48557e8aea4515fef2e208e221fef8ee8b11aa249ba99ab87db403e0d"
+    },
+    {
+      "cutoff": 320,
+      "kind": "Full",
+      "samples": 32768,
+      "csvSha256": "7b18dbc4b059fbd1a9e2da044ae431c776761ec9d43453ffb49a3d78fe9dba92"
+    },
+    {
+      "cutoff": 5120,
+      "kind": "Solo",
+      "samples": 32768,
+      "csvSha256": "0ccd65f84ca08350b123ce5d1636516d78e40a05a40fa3a82b921ffc9f5ac8ea"
+    },
+    {
+      "cutoff": 5120,
+      "kind": "Full",
+      "samples": 32768,
+      "csvSha256": "7b18dbc4b059fbd1a9e2da044ae431c776761ec9d43453ffb49a3d78fe9dba92"
+    }
+  ]
+}

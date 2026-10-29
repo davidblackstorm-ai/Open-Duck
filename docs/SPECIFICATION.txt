@@ -1,0 +1,40 @@
+OPENDUCK PRO X — PRECISION EDITION
+PROMPT MASTER PER CODEX — 28 OTTOBRE 2026
+
+OBIETTIVO
+Sviluppare DA ZERO un plugin audio originale Windows x64 VST3 con JUCE/C++, dedicato al ducking/sidechain techno, e installer Windows professionale. Non riutilizzare codice proprietario. Il file PNG allegato è il DESIGN MASTER VINCOLANTE. La risoluzione 3344x1882 è un ingrandimento lossless di formato PNG con interpolazione: non inventa nuovi dettagli rispetto all'originale 1672x941.
+
+VINCOLO ASSOLUTO SULLA GRAFICA
+Riprodurre fedelmente il concept PNG: telaio cromato lucido e scanalato, viti coerenti, manopole metalliche, proporzioni, colori, etichette e layout. NON rigenerare o reinterpretare il concept. Se una parte dell'immagine è ambigua, chiedere approvazione prima di modificarla. Separare artwork statico da elementi JUCE interattivi. La forma d'onda del kick è BIANCA e reale, ricevuta dal routing audio sidechain; curva colorata sovrapposta nello stesso display. Nessun grafico di spettro aggiuntivo all'avvio. La GUI rimane dimensionalmente e visivamente stabile passando da una modalità all'altra: cambiano SOLO i controlli interni e la curva rappresentativa, non telaio, posizione dei pannelli o interfaccia generale. Non utilizzare una grafica 3D fittizia al posto di misure audio reali. Dimensioni compatte paragonabili a Kickstart 2; scaling leggibile.
+
+SHAPE DESIGNER
+Nella sola area in basso a sinistra sono previste SEI miniature di curve visivamente e matematicamente differenti: morbida, aggressiva, esponenziale, gradino, doppio pumping, personalizzata. La miniatura deve rappresentare esattamente l'inviluppo DSP selezionato. Curve editabili sul grafico principale, punti trascinabili; Tension e Curve Shift; Undo/Redo discreti. Nessun pulsante A/B.
+
+MODALITÀ
+Classic (ciano), Spectral (viola), Multiband (verde), Morph (magenta), Groove (arancione), Transient (blu). All'inserimento di una nuova istanza, SOLO Classic è ON; le altre OFF. Un SOLO settore selezionato visivamente per volta, ma più motori possono restare ON. Per ogni settore: ON/OFF e SOLO indipendenti, LED colorato tenue acceso se attivo, pulsazione dolce sincronizzata all'effettiva attività di ducking, spento se OFF. SOLO temporaneo deve preservare e ripristinare gli stati precedenti. Non confondere selezione GUI con abilitazione DSP.
+
+DSP E TEST
+Classic: curve interpolabili e gain smoothing anti-click; trigger host/audio/MIDI quando supportato dall'host. Spectral: STFT, attenuazione frequenziale selettiva con ricostruzione controllata e latenza dichiarata. Multiband: crossover verificati, bande con ducking indipendente e controlli di ricombinazione. Morph: interpolazione continua senza discontinuità. Groove: pattern sync, swing e divisioni ritmiche. Transient: envelope follower, threshold, isteresi, hold e release. Tutti algoritmi consolidati, documentati, testati; niente AI sperimentale. Coordinare i motori evitando attenuazioni cumulative incontrollate, rispettando le differenze tra fullband e frequenza-selettivo. Bypass con transizione morbida. Verificare click, aliasing/artefatti, latenza, compensazione host, stabilità CPU e automazioni. Non dichiarare zero latenza o perfezione senza test.
+
+ABLETON LIVE 12
+HOST SYNC legge BPM, trasporto e posizione musicale dal progetto, aggiornando il BPM mostrato nel plugin quando cambia quello di Ableton. FREE indipendente. Divisioni 1/4, 1/8, 1/16, puntate e terzine. Trigger HOST segue griglia, SIDECHAIN usa kick audio reale e visualizza waveform bianca, MIDI reagisce alle note ricevute. Un piccolo indicatore segnala l'assenza di sidechain, senza grafici extra.
+TUTTE le prove DAW esclusivamente in UN SOLO PROGETTO DEDICATO 'OpenDuck Pro X - TEST LAB'. NON modificare preferenze globali Ableton, Roland Rubix 24, driver, buffer, sample rate, configurazioni di Windows, o progetti esistenti. Testare cambi BPM, Play/Stop, seek, routing, automazioni, più istanze e ripristino del progetto. Chiedere permesso prima di operazioni invasive.
+
+PERSISTENZA OBBLIGATORIA
+Nessun ritorno a INIT quando si chiude/riapre la GUI, si cambia traccia o si salva/riapre il progetto. Stato indipendente per istanza. Implementare serializzazione robusta/versionata con JUCE AudioProcessorValueTreeState e getStateInformation/setStateInformation, includendo curve custom, preset, parametri, stato motori, SOLO, trigger, sync e selezione. GUI separata dal processore e ricreabile senza reset. INIT solo nuova istanza o reset richiesto esplicitamente.
+
+PANNELLO DI PROGRESSO DI CODEX — SEPARATO DAL VST
+L'utente desidera un pannello sulla DESTRA per vedere i lavori mentre Codex sviluppa. Realizzarlo come dashboard separata dal plugin, se l'ambiente lo consente: fasi, log, attività correnti, barra di progresso basata su task/test realmente completati (mai percentuali inventate), problemi aperti con LED ROSSI lampeggianti dolcemente, problemi risolti con LED VERDI. Non alterare la GUI del VST per includere questo pannello. Se Codex Desktop non permette un pannello integrato, proporre un'app/dashboard locale autonoma e chiedere conferma. Continuare a correggere gli errori in autonomia quando possibile, ma non eludere richieste di autorizzazione, non promettere esecuzione illimitata o non supervisionata.
+
+WINDOWS MEDIA PLAYER
+L'utente terrà Windows Media Player aperto a volume 0 per evitare standby. Non chiuderlo, non modificarne volume o riproduzione, non alterare impostazioni energetiche; segnalare se non basta a impedire lo standby, senza cambiare nulla senza consenso.
+
+CONSEGNA
+Solo VST3 x64, NO VST2. Installer Windows professionale con Inno Setup (o alternativa motivata), grafica coerente con la skin, benvenuto, contratto di licenza con accettazione obbligatoria, installazione nella directory standard C:\Program Files\Common Files\VST3, barra di avanzamento reale, conclusione e disinstallazione pulita. Musica techno ORIGINALE o correttamente licenziata durante l'installer, a volume moderato, pulsante AUDIO ON/OFF; nessuna musica durante l'uso del VST. Preset utente preservati durante aggiornamenti/disinstallazione secondo scelta esplicita. Evitare installazioni e modifiche non autorizzate. Prima di dichiarare il prodotto completo: build release, test host, installer e disinstaller verificati.
+
+METODO
+Partire da analisi e piano tecnico; poi implementazione progressiva Classic, UI, persistenza, motori, test e installer. Riferire ciò che è stato verificato e ciò che resta. Nessuna modifica autonoma al Design Master. Per qualunque conflitto fra rendering e fedeltà grafica, fermarsi e chiedere una decisione.
+
+
+REVISIONE OBBLIGATORIA DEL DESIGN MASTER — 28/10/2026
+L'utente ha rilevato artefatti grafici nel precedente PNG. Il nuovo PNG allegato è un riferimento provvisorio di lavorazione, NON una certificazione di perfezione: verificare e correggere tutte le manopole (Amount, Attack, Release, Tension, Curve Shift, Mix, Swing), non solo Amount/Mix. Ogni knob deve essere un componente JUCE realmente parametrico, con geometria perfettamente circolare, centro e anello LED concentrici, arco luminoso calcolato con coordinate vettoriali e antialiasing; nessuna linea LED spezzata, doppia, disassata, tagliata o sospesa fuori dalla ghiera. Verificare ogni manopola ai valori minimo, medio, massimo e durante automazione. L'anello deve mostrare una progressione intenzionale, con estremi e gap coerenti; non simulare l'arco con una texture decorativa fissa. Eliminare qualunque sottofinestra o bordo duplicato nello Shape Designer; integrare sei curve realmente differenti direttamente nel pannello originale, senza sovrapposizioni. Non modificare il telaio cromato o la disposizione generale. Prima di definire il PNG 'definitivo', fare controllo visivo a zoom 200–400% e mostrare l'anteprima all'utente per approvazione. Nessun A/B. Tutte le correzioni restano limitate alle aree difettose.
